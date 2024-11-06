@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React, { FC } from "react";
+import FormSearch from "../FormSearch";
 
 interface HeroProps {}
 
@@ -7,7 +8,7 @@ const Hero: FC<HeroProps> = () => {
   return (
     <div className="flex float-row justify-between items-center">
       <div className="w-1/2">
-        <div className="text-7xl font-sembold text-slate-600 w-max relative">
+        <div className="text-7xl font-sembold text-gray-900 w-max relative">
           Discover <br /> more than <br />{" "}
           <span className="text-primary font-bold">5000+ Jobs</span>
           <Image
@@ -21,6 +22,7 @@ const Hero: FC<HeroProps> = () => {
             Your gateway to ambitious career growth <br />
             and exciting opportunities in innovative startups
           </div>
+          <FormSearch />
         </div>
       </div>
       <div className="block mt-2">
