@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Epilogue } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
-import Navbar from "@/components/ui/layouts/Navbar";
+import Navbar from "@/components/layouts/Navbar";
 
 const epilogue = Epilogue({ subsets: ["latin"] });
 
