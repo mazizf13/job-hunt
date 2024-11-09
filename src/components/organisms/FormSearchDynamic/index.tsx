@@ -10,14 +10,14 @@ import {
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 
-interface FormSearchProps {
+interface FormSearchDynamicProps {
   className?: string;
 }
 
-const FormSearch: FC<FormSearchProps> = () => {
+const FormSearchDynamic: FC<FormSearchDynamicProps> = () => {
   return (
-    <>
-      <div className="mt-6 p-4 bg-background shadow-md inline-flex items-center gap-4 relative w-max z-10">
+    <div className="mx-auto w-max">
+      <div className="p-4 bg-background shadow-md inline-flex items-center gap-4 relative w-max z-10 text-center">
         <div className="inline-flex gap-3 items-center">
           <Search className="w-6 h-6" />
           <Input
@@ -39,7 +39,7 @@ const FormSearch: FC<FormSearchProps> = () => {
           </Select>
         </div>
         <div className="flex items-center">
-          <Button className="py-8 px-10 text-lg">Search my job</Button>
+          <Button>Search</Button>
         </div>
       </div>
       <div>
@@ -47,8 +47,8 @@ const FormSearch: FC<FormSearchProps> = () => {
           Popular: Software Engineer, UI/UX, Project Management
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
-export default FormSearch;
+export default FormSearchDynamic;
