@@ -20,6 +20,9 @@ const FILTER_FORMS: filterFormType[] = [
 export default function FindJobsPage() {
   const formFilter = useForm<z.infer<typeof formFilterSchema>>({
     resolver: zodResolver(formFilterSchema),
+    defaultValues: {
+      categories: [],
+    },
   });
 
   const onSubmitFormFilter = async (val: z.infer<typeof formFilterSchema>) => {
