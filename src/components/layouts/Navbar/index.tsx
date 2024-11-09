@@ -12,7 +12,7 @@ const Navbar: FC<NavbarProps> = ({}) => {
           <Image
             src={"/images/logo2.png"}
             alt="/images/logo2.png"
-            width={150}
+            width={170}
             height={36}
           />
         </div>
