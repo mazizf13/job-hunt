@@ -1,3 +1,4 @@
+import Footer from "@/components/layouts/Footer";
 import BannerSignUp from "@/components/organisms/BannerSignUp";
 import Category from "@/components/organisms/Category";
 import Clients from "@/components/organisms/Clients";
@@ -7,7 +8,7 @@ import LatestJobs from "@/components/organisms/LatestJobs";
 
 export default function Home() {
   return (
-    <div className="px-32 mb-10">
+    <div className="px-32 mb-32">
       <Hero />
       <Clients />
       <Category />

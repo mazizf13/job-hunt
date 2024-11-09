@@ -3,6 +3,7 @@ import { Epilogue } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
 import Navbar from "@/components/layouts/Navbar";
+import Footer from "@/components/layouts/Footer";
 
 const epilogue = Epilogue({ subsets: ["latin"] });
 
@@ -24,9 +25,9 @@ export default function RootLayout({
           <div className="absolute w-2/3 h-screen top-0 right-0 -z-10">
             <Image src="/images/pattern.png" alt="/images/pattern.png" fill />
           </div>
-
           {children}
         </main>
+        <Footer />
       </body>
     </html>
   );
