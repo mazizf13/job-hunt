@@ -9,6 +9,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
+import { LOCATION_OPTIONS } from "@/constant";
+import { OptionType } from "@/types";
 
 interface FormSearchDynamicProps {
   className?: string;
@@ -21,20 +23,22 @@ const FormSearchDynamic: FC<FormSearchDynamicProps> = () => {
         <div className="inline-flex gap-3 items-center">
           <Search className="w-6 h-6" />
           <Input
-            className="py-8 w-[300px] border-none"
+            className="py-5 w-[400px] border-none"
             placeholder="Job Title or Keyword"
           />
         </div>
         <div className="inline-flex gap-3 items-center">
           <MapPin className="w-6 h-6" />
           <Select>
-            <SelectTrigger className="w-[300px] py-8 border-none outline-none text-gray-500">
+            <SelectTrigger className="w-[400px] py-5 border-none outline-none text-gray-500">
               <SelectValue placeholder="Select Location" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="light">Light</SelectItem>
-              <SelectItem value="dark">Dark</SelectItem>
-              <SelectItem value="system">System</SelectItem>
+              {LOCATION_OPTIONS.map((item: OptionType, index: number) => (
+                <SelectItem key={index} value={item.id}>
+                  {item.label}
+                </SelectItem>
+              ))}
             </SelectContent>
           </Select>
         </div>
