@@ -22,3 +22,30 @@ export const LOCATION_OPTIONS: OptionType[] = [
     label: "Phillippine",
   },
 ];
+
+export const CATEGORIES_OPTIONS = [
+  {
+    id: "recents",
+    label: "Recents",
+  },
+  {
+    id: "home",
+    label: "Home",
+  },
+  {
+    id: "applications",
+    label: "Applications",
+  },
+  {
+    id: "desktop",
+    label: "Desktop",
+  },
+  {
+    id: "downloads",
+    label: "Downloads",
+  },
+  {
+    id: "documents",
+    label: "Documents",
+  },
+];
