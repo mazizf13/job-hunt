@@ -11,7 +11,7 @@ export const formFilterCompanySchema = z.object({
 export const formApplySchema = z.object({
   resume: z
     .any()
-    .refine((file: any) => file?.name > 0, "Please upload your resume!"),
+    .refine((file: any) => file?.name, "Please upload your resume!"),
   fullname: z
     .string({ required_error: "Please enter your name!" })
     .min(5, "Fullname must be at least 5 characters!"),

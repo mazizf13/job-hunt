@@ -19,6 +19,7 @@ import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import UploadField from "../UploadField";
 
 interface FormModalApplyJobProps {}
 
@@ -187,6 +188,8 @@ const FormModalApplyJob: FC<FormModalApplyJobProps> = () => {
                   </FormItem>
                 )}
               />
+
+              <UploadField form={form} />
 
               <Button className="w-full">Apply</Button>
             </form>
