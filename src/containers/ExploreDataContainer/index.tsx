@@ -1,3 +1,4 @@
+import CompanyCard from "@/components/organisms/CompanyCard";
 import FormFilterDynamic from "@/components/organisms/FormFilterDynamic";
 import FormSearchDynamic from "@/components/organisms/FormSearchDynamic";
 import JobCard from "@/components/organisms/JobCard";
@@ -63,20 +64,32 @@ const ExploreDataContainer: FC<ExploreDataContainerProps> = ({
         </div>
         <div className="w-4/5">
           <div className="mb-8">
-            <div className="text-3xl font-semibold">All Jobs</div>
-            <div className="text-muted-foreground">Showing 73 Results</div>
-            <div className="grid grid-cols-1 gap-7">
+            <div className="text-3xl font-semibold">
+              All {type === "job" ? "Jobs" : "Companies"}
+            </div>
+            <div className="text-muted-foreground mb-8">
+              Showing {data.length} Results
+            </div>
+            <div>
               {loading ? (
                 <div>Loading ...</div>
               ) : (
                 <>
-                  {type === "job"
-                    ? data?.map((item: any, index: number) => (
+                  {type === "job" ? (
+                    <div className="grid grid-cols-1 gap-7">
+                      {" "}
+                      {data?.map((item: any, index: number) => (
                         <JobCard key={index} {...item} />
-                      ))
-                    : data?.map((item: any, index: number) => (
-                        <div key={index}>Company Card</div>
                       ))}
+                    </div>
+                  ) : (
+                    <div className="grid grid-cols-3 gap-5">
+                      {" "}
+                      {data?.map((item: any, index: number) => (
+                        <CompanyCard key={index} {...item} />
+                      ))}
+                    </div>
+                  )}
                 </>
               )}
             </div>

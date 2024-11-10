@@ -29,6 +29,28 @@ const dummyData = [
     needs: 10,
     type: "Developer",
   },
+  {
+    applicants: 3,
+    categories: ["Marketing", "SEO"],
+    image: "/images/company.png",
+    jobType: "Full Time",
+    name: "Digital Marketing",
+    location: "Surabaya, Indonesia",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, soluta.",
+    needs: 7,
+    type: "Marketing",
+  },
+  {
+    applicants: 5,
+    categories: ["Technology", "Design"],
+    image: "/images/company2.png",
+    jobType: "Internship",
+    name: "UI/UX Designer",
+    location: "Remote",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, soluta.",
+    needs: 15,
+    type: "Designer",
+  },
 ];
 
 export default function FindJobsPage() {
