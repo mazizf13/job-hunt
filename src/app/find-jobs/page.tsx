@@ -49,7 +49,7 @@ export default function FindJobsPage() {
       onSubmitFilter={onSubmitFormFilter}
       filterForms={FILTER_FORMS}
       title="Dream Job"
-      subtitle="Find your next career at companies like Gojek, Traveloka, and Halodoc."
+      subtitle="Find your next career at companies like Gojek, Traveloka, and Halodoc"
       loading={false}
       type="job"
       data={dummyData}
