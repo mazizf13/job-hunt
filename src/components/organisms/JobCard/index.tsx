@@ -1,5 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Progress } from "@/components/ui/progress";
 import { Separator } from "@/components/ui/separator";
 import { JobType } from "@/types";
 import Image from "next/image";
@@ -42,9 +43,7 @@ const JobCard: FC<JobCardProps> = ({
         <Button className="w-full" size="lg">
           Apply
         </Button>
-        <div className="w-full h-2 mt-2 relative bg-gray-300">
-          <div className="w-full absolute h-2 bg-green-500"></div>
-        </div>
+        <Progress className="mt-2" value={(applicants / needs) * 100} />
         <div className="text-gray-500 text-sm text-center mt-2">
           <span className="text-black font-semibold">{applicants} applied</span>{" "}
           of {needs} capaticy
