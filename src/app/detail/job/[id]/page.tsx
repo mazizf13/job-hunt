@@ -1,5 +1,5 @@
+import FormModalApplyJob from "@/components/organisms/FormModalApplyJob";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Separator } from "@/components/ui/separator";
 import { LayoutGrid } from "lucide-react";
@@ -56,9 +56,7 @@ const DetailJobPage: FC<DetailJobPageProps> = ({}) => {
               </div>
             </div>
           </div>
-          <Button size="lg" className="text-lg px-12 py-6">
-            Apply
-          </Button>
+          <FormModalApplyJob />
         </div>
       </div>
 
