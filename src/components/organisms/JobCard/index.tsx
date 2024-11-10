@@ -12,7 +12,6 @@ const JobCard: FC<JobCardProps> = ({
   applicants,
   categories,
   image,
-  desc,
   jobType,
   name,
   type,
@@ -20,7 +19,7 @@ const JobCard: FC<JobCardProps> = ({
   needs,
 }) => {
   return (
-    <div className="w-full border mb-5 p-6 border-border flex flow-row justify-between items-center">
+    <div className="w-full border mt-5 mb-5 p-6 border-border flex flow-row justify-between items-center">
       <div className="flex flex-row items-start gap-6">
         <div>
           <Image src={image} alt={image} width={64} height={64} />

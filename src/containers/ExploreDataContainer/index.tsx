@@ -1,7 +1,7 @@
 import FormFilterDynamic from "@/components/organisms/FormFilterDynamic";
 import FormSearchDynamic from "@/components/organisms/FormSearchDynamic";
 import JobCard from "@/components/organisms/JobCard";
-import { filterFormType } from "@/types";
+import { filterFormType, JobType } from "@/types";
 import Image from "next/image";
 import React, { FC } from "react";
 
@@ -9,12 +9,22 @@ interface ExploreDataContainerProps {
   formFilter?: any;
   onSubmitFilter: (val: any) => Promise<void> | undefined;
   filterForms: filterFormType[];
+  loading: boolean;
+  title: string;
+  subtitle: string;
+  data: any[];
+  type: "job" | "company";
 }
 
 const ExploreDataContainer: FC<ExploreDataContainerProps> = ({
   formFilter,
   onSubmitFilter,
   filterForms,
+  loading,
+  title,
+  subtitle,
+  data,
+  type,
 }) => {
   return (
     <>
@@ -24,7 +34,7 @@ const ExploreDataContainer: FC<ExploreDataContainerProps> = ({
             <span className="text-5xl font-semibold">Find Your</span>
             <div className="relative">
               <span className="text-5xl font-semibold text-primary">
-                Dream Job
+                {title}
               </span>
               <div className="absolute top-10 w-[220px] h-10">
                 <Image
@@ -36,10 +46,7 @@ const ExploreDataContainer: FC<ExploreDataContainerProps> = ({
               </div>
             </div>
           </div>
-          <div className="text-center text-gray-500">
-            Find your next career at companies like Gojek, Traveloka, and
-            Halodoc.
-          </div>
+          <div className="text-center text-gray-500">{subtitle}</div>
         </div>
         <div>
           <FormSearchDynamic />
@@ -59,17 +66,19 @@ const ExploreDataContainer: FC<ExploreDataContainerProps> = ({
             <div className="text-3xl font-semibold">All Jobs</div>
             <div className="text-muted-foreground">Showing 73 Results</div>
             <div className="grid grid-cols-1 gap-7">
-              <JobCard
-                applicants={5}
-                categories={["Design", "Development"]}
-                image="/images/company2.png"
-                jobType="Full Time"
-                desc="lorem ipsum"
-                name="UI/UX Designer"
-                type="Design"
-                location="Jakarta, Indonesia"
-                needs={10}
-              />
+              {loading ? (
+                <div>Loading ...</div>
+              ) : (
+                <>
+                  {type === "job"
+                    ? data?.map((item: any, index: number) => (
+                        <JobCard key={index} {...item} />
+                      ))
+                    : data?.map((item: any, index: number) => (
+                        <div key={index}>Company Card</div>
+                      ))}
+                </>
+              )}
             </div>
           </div>
         </div>

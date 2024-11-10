@@ -17,6 +17,20 @@ const FILTER_FORMS: filterFormType[] = [
   },
 ];
 
+const dummyData = [
+  {
+    applicants: 5,
+    categories: ["Technology", "Design"],
+    image: "/images/company2.png",
+    jobType: "Full Time",
+    name: "Frontend Engineer",
+    location: "Jakarta, Indonesia",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, soluta.",
+    needs: 10,
+    type: "Developer",
+  },
+];
+
 export default function FindJobsPage() {
   const formFilter = useForm<z.infer<typeof formFilterSchema>>({
     resolver: zodResolver(formFilterSchema),
@@ -34,6 +48,11 @@ export default function FindJobsPage() {
       formFilter={formFilter}
       onSubmitFilter={onSubmitFormFilter}
       filterForms={FILTER_FORMS}
+      title="Dream Job"
+      subtitle="Find your next career at companies like Gojek, Traveloka, and Halodoc."
+      loading={false}
+      type="job"
+      data={dummyData}
     />
   );
 }
