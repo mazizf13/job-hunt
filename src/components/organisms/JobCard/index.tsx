@@ -4,6 +4,7 @@ import { Progress } from "@/components/ui/progress";
 import { Separator } from "@/components/ui/separator";
 import { JobType } from "@/types";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React, { FC } from "react";
 
 interface JobCardProps extends JobType {}
@@ -18,8 +19,13 @@ const JobCard: FC<JobCardProps> = ({
   location,
   needs,
 }) => {
+  const router = useRouter();
+
   return (
-    <div className="w-full border p-6 border-border flex flow-row justify-between items-center">
+    <div
+      onClick={() => router.push("/detail/job/1")}
+      className="w-full border p-6 border-border flex flow-row justify-between items-center"
+    >
       <div className="flex flex-row items-start gap-6">
         <div>
           <Image src={image} alt={image} width={64} height={64} />
@@ -45,7 +51,7 @@ const JobCard: FC<JobCardProps> = ({
         <Progress className="mt-2" value={(applicants / needs) * 100} />
         <div className="text-gray-500 text-sm text-center mt-2">
           <span className="text-black font-semibold">{applicants} applied</span>{" "}
-          of {needs} capaticy
+          of {needs} capacity
         </div>
       </div>
     </div>
