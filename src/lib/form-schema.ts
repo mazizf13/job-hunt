@@ -21,8 +21,12 @@ export const formApplySchema = z.object({
   phone: z
     .string({ required_error: "Please enter your phone number!" })
     .min(8, "Phone number must be at least 8 characters!"),
-  previousJobTitle: z.string(),
-  linkedIn: z.string(),
-  portfolio: z.string(),
-  coverLetter: z.string(),
+  previousJobTitle: z.string({
+    required_error: "Please enter your previous job title!",
+  }),
+  linkedIn: z.string({ required_error: "Please enter your LinkedIn URL!" }),
+  portfolio: z.string({ required_error: "Please enter your portfolio URL!" }),
+  coverLetter: z.string({
+    required_error: "Please enter your addtional information!",
+  }),
 });

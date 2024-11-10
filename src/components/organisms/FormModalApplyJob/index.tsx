@@ -18,6 +18,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 
 interface FormModalApplyJobProps {}
 
@@ -59,7 +60,7 @@ const FormModalApplyJob: FC<FormModalApplyJobProps> = () => {
           <Separator className="my-5" />
 
           <div className="mb-5">
-            <div className="font-semibold text-lg">Submit your application</div>
+            <div className="font-semibold text-lg">Submit Your Application</div>
             <div className="text-gray-500 text-sm mt-2">
               The following is required and will only be shared with Nomad
             </div>
@@ -70,7 +71,7 @@ const FormModalApplyJob: FC<FormModalApplyJobProps> = () => {
               onSubmit={form.handleSubmit(onSubmitForm)}
               className="space-y-6"
             >
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-6">
                 <FormField
                   control={form.control}
                   name="fullname"
@@ -84,7 +85,110 @@ const FormModalApplyJob: FC<FormModalApplyJobProps> = () => {
                     </FormItem>
                   )}
                 />
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Email</FormLabel>
+                      <FormControl>
+                        <Input placeholder="Enter your email" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="phone"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Phone Number</FormLabel>
+                      <FormControl>
+                        <Input
+                          placeholder="Enter your phone number"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="previousJobTitle"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Current of Previous Job Title</FormLabel>
+                      <FormControl>
+                        <Input
+                          placeholder="Enter your previous job title"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
               </div>
+
+              <Separator className="my-5" />
+
+              <h2 className="font-semibold text-lg">Links</h2>
+
+              <div className="grid grid-cols-2 gap-6">
+                <FormField
+                  control={form.control}
+                  name="linkedIn"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>LinkedIn URL</FormLabel>
+                      <FormControl>
+                        <Input
+                          placeholder="Link to your LinkedIn URL"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="portfolio"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Portfolio</FormLabel>
+                      <FormControl>
+                        <Input
+                          placeholder="Link to your portfolio URL"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
+
+              <FormField
+                control={form.control}
+                name="coverLetter"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Additional Information</FormLabel>
+                    <FormControl>
+                      <Textarea
+                        placeholder="Write your cover letter or anything else you want to share"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <Button className="w-full">Apply</Button>
             </form>
           </Form>
         </div>
