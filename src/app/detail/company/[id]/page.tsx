@@ -1,5 +1,15 @@
+import CompanyInfo from "@/components/organisms/CompanyInfo";
 import { Badge } from "@/components/ui/badge";
-import { Flame } from "lucide-react";
+import {
+  Building2,
+  Facebook,
+  Flame,
+  Instagram,
+  Linkedin,
+  MapPinned,
+  Twitter,
+  Users,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React, { FC } from "react";
@@ -40,7 +50,9 @@ const DetailCompanyPage: FC<DetailCompanyPageProps> = () => {
             />
             <div>
               <div className="inline-flex gap-4 items-center">
-                <span className="text-4xl font-semibold">PT GO-JEK INDONESIA</span>
+                <span className="text-4xl font-semibold">
+                  PT GO-JEK INDONESIA
+                </span>
                 <Badge>10 Jobs</Badge>
               </div>
               <div className="mt-2">
@@ -52,52 +64,81 @@ const DetailCompanyPage: FC<DetailCompanyPageProps> = () => {
                 </Link>
               </div>
               <div className="inline-flex items-center mt-6 gap-10">
-                <div className="items-center inline-flex gap-3">
-                  <div>
-                    <div className="bg-white p-3 rounded-full">
-                      <Flame className="w-6 h-6 text-primary" />
-                    </div>
-                  </div>
-                  <div>
-                    <div className="text-gray-500">Founded</div>
-                    <div className="font-semibold">October 5, 2010</div>
-                  </div>
-                </div>
-                <div className="items-center inline-flex gap-3">
-                  <div>
-                    <div className="bg-white p-3 rounded-full">
-                      <Flame className="w-6 h-6 text-primary" />
-                    </div>
-                  </div>
-                  <div>
-                    <div className="text-gray-500">Founded</div>
-                    <div className="font-semibold">October 5, 2010</div>
-                  </div>
-                </div>
-                <div className="items-center inline-flex gap-3">
-                  <div>
-                    <div className="bg-white p-3 rounded-full">
-                      <Flame className="w-6 h-6 text-primary" />
-                    </div>
-                  </div>
-                  <div>
-                    <div className="text-gray-500">Founded</div>
-                    <div className="font-semibold">October 5, 2010</div>
-                  </div>
-                </div>
-                <div className="items-center inline-flex gap-3">
-                  <div>
-                    <div className="bg-white p-3 rounded-full">
-                      <Flame className="w-6 h-6 text-primary" />
-                    </div>
-                  </div>
-                  <div>
-                    <div className="text-gray-500">Founded</div>
-                    <div className="font-semibold">October 5, 2010</div>
-                  </div>
-                </div>
+                <CompanyInfo
+                  icon={<Flame className="" />}
+                  label="Founded"
+                  value="October 5, 2010"
+                />
+                <CompanyInfo
+                  icon={<Users className="" />}
+                  label="Employees"
+                  value="101 - 1001"
+                />
+                <CompanyInfo
+                  icon={<MapPinned className="" />}
+                  label="Location"
+                  value="Indonesia"
+                />
+                <CompanyInfo
+                  icon={<Building2 className="" />}
+                  label="Industry"
+                  value="Transportation Service"
+                />
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+      <div className="px-32 py-16 flex flex-row items-start gap-10">
+        <div className="w-3/4">
+          <div className="mb-12">
+            <div className="text-3xl font-semibold mb-3">Company Profile</div>
+            <div className="text-muted-foreground">
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum
+                magnam deleniti iste tempore a aspernatur vitae quisquam harum
+                praesentium minima.
+              </p>
+            </div>
+          </div>
+          <div className="text-3xl font-semibold mb-4">Social Media</div>
+          <div className="flex items-center gap-5 w-[400px] flex-wrap">
+            <div className="p-2 border border-primary text-primary w-max inline-flex items-center gap-3 font-semibold rounded-md">
+              <Link
+                href="https://linkedin.com/showcase/gojek-gotogroup/"
+                target="_blank"
+              >
+                <Linkedin />
+              </Link>
+            </div>
+            <div className="p-2 border border-primary text-primary w-max inline-flex items-center gap-3 font-semibold rounded-md">
+              <Link
+                href="https://instagram.com/gojekindonesia/"
+                target="_blank"
+              >
+                <Instagram />
+              </Link>
+            </div>
+            <div className="p-2 border border-primary text-primary w-max inline-flex items-center gap-3 font-semibold rounded-md">
+              <Link href="https://facebook.com/gojekindonesia/" target="_blank">
+                <Facebook />
+              </Link>
+            </div>
+            <div className="p-2 border border-primary text-primary w-max inline-flex items-center gap-3 font-semibold rounded-md">
+              <Link href="https://x.com/gojekindonesia/" target="_blank">
+                <Twitter />
+              </Link>
+            </div>
+          </div>
+        </div>
+        <div className="w-1/4">
+          <div className="text-3xl font-semibold mb-4">Tech Stack</div>
+          <div className="text-gray-500 text-sm">
+            Learn about the technology and tools that Pattern uses.
+          </div>
+          <div className="mt-5 inline-flex gap-4">
+            <Badge>JavaScript</Badge>
+            <Badge>TypeScript</Badge>
           </div>
         </div>
       </div>
