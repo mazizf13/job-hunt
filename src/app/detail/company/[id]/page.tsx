@@ -1,5 +1,7 @@
 import CompanyInfo from "@/components/organisms/CompanyInfo";
+import LatestJobs from "@/components/organisms/LatestJobs";
 import { Badge } from "@/components/ui/badge";
+import { Separator } from "@/components/ui/separator";
 import {
   Building2,
   Facebook,
@@ -141,6 +143,35 @@ const DetailCompanyPage: FC<DetailCompanyPageProps> = () => {
             <Badge>TypeScript</Badge>
           </div>
         </div>
+      </div>
+      <div className="px-32">
+        <Separator />
+        <div className="my-16">
+          <div className="text-3xl font-semibold mb-4">Teams</div>
+          <div className="grid grid-cols-5 gap-5 mt-5">
+            {[1, 2, 3, 4, 5].map((index: number) => (
+              <div key={index} className="border border-border px-3 py-5">
+                <div className="w-16 h-16 rounded-full mx-auto bg-gray-300" />
+                <div className="text-center my-4">
+                  <div className="font-semibold text-sm">Sugito Walujo</div>
+                  <div className="text-gray-500 text-xs">
+                    Chief Executive Officer
+                  </div>
+                </div>
+                <div className="mx-auto w-max">
+                  <div className="inline-flex gap-2">
+                    <Linkedin className="w-4 h-4 text-gray-500" />
+                    <Instagram className="w-4 h-4 text-gray-500" />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <Separator />
+      </div>
+      <div className="px-32">
+        <LatestJobs />
       </div>
     </div>
   );

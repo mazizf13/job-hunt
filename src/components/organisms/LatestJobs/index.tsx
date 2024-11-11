@@ -19,6 +19,8 @@ const LatestJobs: FC<LatestJobsProps> = () => {
             location="Surabaya, Indonesia"
             categories={["Marketing", "Design"]}
             desc="description"
+            needs={10}
+            applicants={5}
           />
         ))}
       </div>
