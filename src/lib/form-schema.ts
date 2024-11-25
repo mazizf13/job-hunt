@@ -35,9 +35,7 @@ export const formSignInSchema = z.object({
   email: z
     .string({ required_error: "Please enter your email!" })
     .email("Please enter a valid email!"),
-  password: z
-    .string({ required_error: "Please enter your password!" })
-    .min(8, "Password must be at least 8 characters!"),
+  password: z.string({ required_error: "Please enter your password!" }),
 });
 
 export const formSignUpSchema = z.object({
