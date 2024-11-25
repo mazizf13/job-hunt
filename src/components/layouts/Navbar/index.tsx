@@ -27,7 +27,7 @@ const Navbar: FC<NavbarProps> = ({}) => {
             href={"/find-jobs"}
             className="font-medium text-gray-400 mr-4 cursor-pointer"
           >
-            Finds Job
+            Find Jobs
           </Link>
           <Link
             href={"/find-companies"}
